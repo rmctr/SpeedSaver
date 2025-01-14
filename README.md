@@ -16,6 +16,8 @@ The module disables some Google services that run in the background on your phon
 
 Note that it disables Android Rescue Party.  The reason for this is that the "Rescue Party" is more like a "Party Killer," because it is infamous for factory resetting your device on bootloops.  We disabled this.
 
+After install, it is highly recommended to remove the contents of /data/dalvik-cache, reboot, and run "pm compile -a -f -m everything-profile" in the terminal.
+
 ## Authors 🤓
 The module is developed by Noah (noahy@riseup.net) and Xaiphon, and it includes code by Draco (tytydraco) called KTweak under the BSD 2-Clause "Simplified" license, for which we thank him.  We also thank DethByte64 for inspiring the way of setting processes' mice levels.
 
