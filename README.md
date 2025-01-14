@@ -27,9 +27,6 @@ Open a [discussion](https://github.com/rmctr/SpeedSaver/discussions) or send an 
 ## Issues/bug reports 🐛 
 Open an [issue](https://github.com/rmctr/SpeedSaver/issues) with a description of the issue or bug.
 
-## Want to contribute? ❤️ 
-[More details here.](https://github.com/rmctr/SpeedSaver/blob/main/CONTRIBUTING.md)
-
 ## DMCA notice 
 If you have any DMCA-related concerns regarding this repository or its releases, please contact us directly at noahy@riseup.net. We take all copyright matters seriously and will address any valid complaints promptly. We are committed to complying with legal requirements and resolving issues in a fair and timely manner.
 
