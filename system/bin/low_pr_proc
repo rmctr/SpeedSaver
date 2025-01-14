@@ -1,0 +1,28 @@
+#!/system/bin/sh
+# Copyright (c) 2025, Noah Y. & Xaiphon
+
+# Lower priorities for processes
+rm -rf "$NEW_PATH/renice.txt"
+touch "$NEW_PATH/renice.txt"
+NEW_PATH="/sdcard/Android/SpeedSaver/"
+LOG_RENICE="$NEW_PATH/renice.txt"
+PROCESSES=("com.google.android.gms" "com.google.android.gms.persistent" "com.google.android.gms.unstable" "/system/bin/logd" "/system/bin/netd" "com.miui.securitycenter" "com.miui.securitycenter.remote")
+
+while true; do
+    > "$LOG_RENICE"
+    for PROCESS in "${PROCESSES[@]}"; do
+        PIDS=$(pgrep -f "$PROCESS")
+        if [ -n "$PIDS" ]; then
+            for PID in $PIDS; do
+                if renice -n 19 -p $PID; then
+                    echo "$(date): Successfully reniced $PROCESS with PID $PID" >> "$LOG_RENICE"
+                else
+                    echo "$(date): Failed to renice $PROCESS with PID $PID" >> "$LOG_RENICE"
+                fi
+            done
+        else
+            echo "$(date): $PROCESS is not running." >> "$LOG_RENICE"
+        fi
+    done
+    sleep 120
+done

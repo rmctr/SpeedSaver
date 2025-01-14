@@ -1,0 +1,77 @@
+# Copyright (c) 2025, Noah Y. & Xaiphon
+
+# Disable Android Rescue Party (-Killer)
+persist.sys.disable_rescue=true
+
+# Display/UI smoothness and battery saving (a few Qualcomm-exclusive)
+vendor.display.disable_rotator_downscale=1
+vendor.display.drop_skewed_vsync=1
+vendor.display.disable_avr=0
+vendor.display.disable_skip_validate=0
+vendor.display.disable_fbid_cache=0
+vendor.display.disable_fast_pat=0
+sys.hwc_disable_hdr=0
+debug.enabletr=1
+debug.qctwa.preservebuf=1
+debug.composition.type=dyn
+dev.pm.dyn_samplingrate=1
+windowsmgr.max_events_per_sec=180
+ro.fling.distance.coef=2.0
+ro.fling.duration.coef=3.0
+ro.max_fling_velocity=3000
+
+# Zygote USAP preforking (Unspecialized App Processes)
+persist.device_config.runtime_native.usap_pool_enabled=true
+dalvik.vm.usap_pool_enabled=true
+
+# IORap preload
+iorapd.perfetto.enable=true
+iorapd.readahead.enable=true
+persist.device_config.runtime_native_boot.iorap_perfetto_enable=true
+persist.device_config.runtime_native_boot.iorap_readahead_enable=true
+ro.iorapd.enable=true
+
+# Turbo video, decreases frame drops but may increase power consumption (Qualcomm-exclusive?) -- worthy tradeoff
+vidc.debug.turbo=1
+
+# More thorough profile-based compilation
+dalvik.vm.usejitprofiles=true
+pm.dexopt.update=everything-profile
+pm.dexopt.install=everything-profile
+pm.dexopt.bg-dexopt=everything-profile
+pm.dexopt.first-use=everything-profile
+pm.dexopt.cmdline=everything-profile
+dalvik.vm.systemuicompilerfilter=speed
+dalvik.vm.dexopt.secondary=true
+pm.dexopt.ab-ota=everything-profile
+dalvik.vm.dexopt.secondary=true
+dalvik.vm.enable_pr_dexopt=true
+dalvik.vm.useartservice=true
+
+# Disable logs
+debug.als.logs=0
+debug.svi.logs=0
+ro.logd.size.stats=0
+log.tag.stats_log=0
+logd.logpersistd.enable=false
+persist.vendor.verbose_logging_enabled=false
+logcat.live=disable
+persist.debug.trace=0
+debug.atrace.tags.enableflags=0
+persist.sys.loglevel=0
+sys.log.app=0
+persist.traced.enable=0
+logd.statistics=0
+persist.sample.eyetracking.log=0
+debug.atrace.tags.enableflags=0
+debugtool.anrhistory=0
+profiler.hung.dumpdobugreport=false
+ctl.stop=logd
+
+# Memory tweaks
+persist.sys.purgeable_assets=1
+dalvik.vm.heapstartsize=16m
+dalvik.vm.heapminfree=2m
+dalvik.vm.heapmaxfree=8m
+ro.lmk.swap_free_low_percentage=10
+ro.lmk.swap_util_max=100
