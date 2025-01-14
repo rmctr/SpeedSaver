@@ -1,4 +1,4 @@
-
+![Banner](banner.jpeg)
 # SpeedSaver:  Save your phone and battery.
 
 ## What is SpeedSaver? 😮
