@@ -1,4 +1,4 @@
-![speedsaver_banner](https://github.com/user-attachments/assets/aa2b2418-1fc7-47f2-9e7f-db705504fd6a)
+
 # SpeedSaver:  Save your phone and battery.
 
 ## What is SpeedSaver? 😮
@@ -17,7 +17,7 @@ The module disables some Google services that run in the background on your phon
 Note that it disables Android Rescue Party.  The reason for this is that the "Rescue Party" is more like a "Party Killer," because it is infamous for factory resetting your device on bootloops.  We disabled this.
 
 ## Authors 🤓
-The module is developed by Noah (noahy@riseup.net) and Xaiphon, and it includes code by Draco (tytydraco) called KTweak under the BSD 2-Clause "Simplified" license.  We also thank DethByte64 for inspiring the way of setting processes' mice levels.
+The module is developed by Noah (noahy@riseup.net) and Xaiphon, and it includes code by Draco (tytydraco) called KTweak under the BSD 2-Clause "Simplified" license, for which we thank him.  We also thank DethByte64 for inspiring the way of setting processes' mice levels.
 
 ## Support 🆘
 Open a [discussion](https://github.com/rmctr/SpeedSaver/discussions) or send an email to noahy@riseup.net.
