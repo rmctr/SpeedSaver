@@ -19,7 +19,7 @@ Note that it disables Android Rescue Party.  The reason for this is that the "Re
 After install, it is highly recommended to remove the contents of /data/dalvik-cache, reboot, and run "pm compile -a -f -m everything-profile" in the terminal.
 
 ## Authors 🤓
-The module is developed by Noah Y. and Xaiphon, and it includes code by Draco (tytydraco) called [KTweak](https://github.com/tytydraco/KTweak) under the BSD 2-Clause "Simplified" license, for which we thank him.  We also thank DethByte64 — whose excellent module is [here](https://github.com/DethByte64/Xtreme-Battery-Saver) — for inspiring the way of setting processes' nice levels.
+The module is developed by Noah Y. and Xaiphon, and it includes code by Draco (tytydraco) called [KTweak](https://github.com/tytydraco/KTweak) under the BSD 2-Clause "Simplified" license, for which we thank him.  We also thank DethByte64 — whose excellent module is [here](https://github.com/DethByte64/Xtreme-Battery-Saver) — for inspiring the way of setting processes' nice levels and generous contributions.
 
 ## Support 🆘
 Open a [discussion](https://github.com/rmctr/SpeedSaver/discussions) or send an email to noahy@riseup.net.
