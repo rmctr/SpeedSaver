@@ -1,4 +1,4 @@
-#!/system/bin/sh
+#/system/bin/sh
 # Copyright (c) 2025, Noah Y. & Xaiphon
 
 CON_PATH="/sdcard/Android/SpeedSaver"
@@ -25,409 +25,406 @@ setprop persist.sys.disable_rescue false
 resetprop -p persist.sys.disable_rescue false
 
 # Enable GMS services
-#/system/bin/sh
-su -c pm enable com.google.android.gms/.ads.settings.AdsSettingsActivity
-su -c pm enable com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity
-su -c pm enable com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity
-su -c pm enable com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity
-su -c pm enable com.google.android.gms/com.google.android.location.settings.GoogleLocationSettingsActivity
-su -c pm enable com.google.android.gms/com.google.android.location.settings.LocationHistorySettingsActivity
-su -c pm enable com.google.android.gms/com.google.android.location.settings.LocationSettingsCheckerActivity
-su -c pm enable com.google.android.gms/.usagereporting.settings.UsageReportingActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.SystemAppTrampolineActivity
-su -c pm enable com.google.android.gms/.feedback.AnnotateScreenshotActivity
-su -c pm enable com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider
-su -c pm enable com.google.android.gms/com.google.android.location.internal.LocationContentProvider
-su -c pm enable com.google.android.gms/.common.stats.net.contentprovider.NetworkUsageContentProvider
-su -c pm enable com.google.android.gms/.ads.config.GServicesChangedReceiver
-su -c pm enable com.google.android.gms/com.google.android.contextmanager.systemstate.SystemStateReceiver
-su -c pm enable com.google.android.gms/.ads.jams.SystemEventReceiver
-su -c pm enable com.google.android.gms/.ads.config.FlagsReceiver
-su -c pm enable com.google.android.gms/.ads.social.DoritosReceiver
-su -c pm enable com.google.android.gms/.analytics.AnalyticsReceiver
-su -c pm enable com.google.android.gms/.analytics.internal.GServicesChangedReceiver
-su -c pm enable com.google.android.gms/.common.analytics.CoreAnalyticsReceiver
-su -c pm enable com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher
-su -c pm enable com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver
-su -c pm enable com.google.android.gms/.checkin.CheckinService$ActiveReceiver
-su -c pm enable com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver
-su -c pm enable com.google.android.gms/.checkin.CheckinService$ImposeReceiver
-su -c pm enable com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver
-su -c pm enable com.google.android.gms/.checkin.CheckinService$TriggerReceiver
-su -c pm enable com.google.android.gms/.checkin.EventLogService$Receiver
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.internal.LocationProviderEnabler
-su -c pm enable com.google.android.gms/com.google.android.location.internal.NlpNetworkProviderSettingsUpdateReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity$LocationModeChangingReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver
-su -c pm enable com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor
-su -c pm enable com.google.android.gms/.location.copresence.GcmBroadcastReceiver
-su -c pm enable com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver
-su -c pm enable com.google.android.gms/.social.location.GservicesBroadcastReceiver
-su -c pm enable com.google.android.gms/.update.SystemUpdateService$Receiver
-su -c pm enable com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver
-su -c pm enable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver
-su -c pm enable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
-su -c pm enable com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService
-su -c pm enable com.google.android.gms/.ads.AdRequestBrokerService
-su -c pm enable com.google.android.gms/.ads.GservicesValueBrokerService
-su -c pm enable com.google.android.gms/.ads.identifier.service.AdvertisingIdNotificationService
-su -c pm enable com.google.android.gms/.ads.identifier.service.AdvertisingIdService
-su -c pm enable com.google.android.gms/.ads.jams.NegotiationService
-su -c pm enable com.google.android.gms/.ads.pan.PanService
-su -c pm enable com.google.android.gms/.ads.social.GcmSchedulerWakeupService
-su -c pm enable com.google.android.gms/.analytics.AnalyticsService
-su -c pm enable com.google.android.gms/.analytics.internal.PlayLogReportingService
-su -c pm enable com.google.android.gms/.analytics.service.AnalyticsService
-su -c pm enable com.google.android.gms/.analytics.service.PlayLogMonitorIntervalService
-su -c pm enable com.google.android.gms/.analytics.service.RefreshEnabledStateService
-su -c pm enable com.google.android.gms/.auth.be.proximity.authorization.userpresence.UserPresenceService
-su -c pm enable com.google.android.gms/.common.analytics.CoreAnalyticsIntentService
-su -c pm enable com.google.android.gms/.common.stats.GmsCoreStatsService
-su -c pm enable com.google.android.gms/.backup.BackupStatsService
-su -c pm enable com.google.android.gms/.deviceconnection.service.DeviceConnectionAsyncService
-su -c pm enable com.google.android.gms/.deviceconnection.service.DeviceConnectionServiceBroker
-su -c pm enable com.google.android.gms/.wallet.service.analytics.AnalyticsIntentService
-su -c pm enable com.google.android.gms/.checkin.CheckinService
-su -c pm enable com.google.android.gms/.checkin.EventLogService
-su -c pm enable com.google.android.gms/com.google.android.location.internal.AnalyticsUploadIntentService
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.DeleteHistoryService
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.DispatchingService
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.InternalPreferenceServiceDoNotUse
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.LocationHistoryInjectorService
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService
-su -c pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingSyncService
-su -c pm enable com.google.android.gms/com.google.android.location.activity.HardwareArProviderService
-su -c pm enable com.google.android.gms/com.google.android.location.fused.FusedLocationService
-su -c pm enable com.google.android.gms/com.google.android.location.fused.service.FusedProviderService
-su -c pm enable com.google.android.gms/com.google.android.location.geocode.GeocodeService
-su -c pm enable com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService
-su -c pm enable com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService
-su -c pm enable com.google.android.gms/com.google.android.location.places.PlaylogService
-su -c pm enable com.google.android.gms/com.google.android.location.places.service.GeoDataService
-su -c pm enable com.google.android.gms/com.google.android.location.places.service.PlaceDetectionService
-su -c pm enable com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitorIntentService
-su -c pm enable com.google.android.gms/.config.ConfigService
-su -c pm enable com.google.android.gms/.stats.PlatformStatsCollectorService
-su -c pm enable com.google.android.gms/.usagereporting.service.UsageReportingService
-su -c pm enable com.google.android.gms/.update.SystemUpdateService
-su -c pm enable com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity
-su -c pm enable com.google.android.gms/com.google.android.location.network.LocationProviderChangeReceiver
-su -c pm enable com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
-su -c pm enable com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService
-su -c pm enable com.google.android.gms/com.google.android.location.network.NetworkLocationService
-su -c pm enable com.google.android.gms/com.google.android.location.util.PreferenceService
-su -c pm enable com.google.android.gms/.fitness.settings.FitnessSettingsActivity
-su -c pm enable com.google.android.gms/.fitness.sync.FitnessContentProvider
-su -c pm enable com.google.android.gms/.fitness.disconnect.FitDisconnectReceiver
-su -c pm enable com.google.android.gms/.fitness.sensors.sample.CollectSensorReceiver
-su -c pm enable com.google.android.gms/.fitness.service.FitnessInitReceiver
-su -c pm enable com.google.android.gms/.fitness.wearables.WearableSyncServiceReceiver
-su -c pm enable com.google.android.gms/.fitness.disconnect.FitCleanupService
-su -c pm enable com.google.android.gms/.fitness.sensors.activity.ActivityRecognitionService
-su -c pm enable com.google.android.gms/.fitness.sensors.floorchange.FloorChangeRecognitionService
-su -c pm enable com.google.android.gms/.fitness.sensors.sample.CollectSensorService
-su -c pm enable com.google.android.gms/.fitness.service.DebugIntentService
-su -c pm enable com.google.android.gms/.fitness.service.ble.FitBleBroker
-su -c pm enable com.google.android.gms/.fitness.service.config.FitConfigBroker
-su -c pm enable com.google.android.gms/.fitness.service.history.FitHistoryBroker
-su -c pm enable com.google.android.gms/.fitness.service.internal.FitInternalBroker
-su -c pm enable com.google.android.gms/.fitness.service.proxy.FitProxyBroker
-su -c pm enable com.google.android.gms/.fitness.service.recording.FitRecordingBroker
-su -c pm enable com.google.android.gms/.fitness.service.sensors.FitSensorsBroker
-su -c pm enable com.google.android.gms/.fitness.service.sessions.FitSessionsBroker
-su -c pm enable com.google.android.gms/.fitness.store.maintenance.StoreMaintenanceService
-su -c pm enable com.google.android.gms/.fitness.sync.FitnessSyncAdapterService
-su -c pm enable com.google.android.gms/.fitness.wearables.WearableSyncService
-su -c pm enable com.google.android.gms/.car.BroadcastRedirectActivity
-su -c pm enable com.google.android.gms/.car.CarErrorDisplayActivity
-su -c pm enable com.google.android.gms/.car.CarHomeActivity
-su -c pm enable com.google.android.gms/.car.CarHomeActivity1
-su -c pm enable com.google.android.gms/.car.CarHomeActivity2
-su -c pm enable com.google.android.gms/.car.CarServiceSettingsActivity
-su -c pm enable com.google.android.gms/.car.FirstActivity
-su -c pm enable com.google.android.gms/.car.SetupActivity
-su -c pm enable com.google.android.gms/.car.CarIntentService
-su -c pm enable com.google.android.gms/.car.CarService
-su -c pm enable com.google.android.gms/.car.InCallServiceImpl
-su -c pm enable com.google.android.gms/.car.VoiceActionService
-su -c pm enable com.google.android.gms/.car.diagnostics.CrashReporterService
-su -c pm enable com.google.android.gms/.feedback.FeedbackActivity
-su -c pm enable com.google.android.gms/.feedback.IntentListenerFeedbackActivity
-su -c pm enable com.google.android.gms/.feedback.PreviewActivity
-su -c pm enable com.google.android.gms/.feedback.PreviewScreenshotActivity
-su -c pm enable com.google.android.gms/.feedback.ShowTextActivity
-su -c pm enable com.google.android.gms/.feedback.SuggestionsActivity
-su -c pm enable com.google.android.gms/.feedback.FeedbackConnectivityReceiver
-su -c pm enable com.google.android.gms/.feedback.FeedbackAsyncService
-su -c pm enable com.google.android.gms/.feedback.FeedbackService
-su -c pm enable com.google.android.gms/.feedback.LegacyBugReportService
-su -c pm enable com.google.android.gms/.feedback.SendService
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.ClickToCallActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.EmailActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.HelpActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.OpenHangoutActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.OpenHelpActivity
-su -c pm enable com.google.android.gms/.googlehelp.helpactivities.RealtimeSupportClassifierActivity
-su -c pm enable com.google.android.gms/.googlehelp.webview.GoogleHelpWebViewActivity
-su -c pm enable com.google.android.gms/.googlehelp.GcmBroadcastReceiver
-su -c pm enable com.google.android.gms/.googlehelp.metrics.ConnectivityBroadcastReceiver
-su -c pm enable com.google.android.gms/.googlehelp.metrics.MetricsReportService
-su -c pm enable com.google.android.gms/.googlehelp.metrics.ReportBatchedMetricsService
-su -c pm enable com.google.android.gms/.googlehelp.service.ChatStatusUpdateService
-su -c pm enable com.google.android.gms/.googlehelp.service.ClearHelpHistoryIntentService
-su -c pm enable com.google.android.gms/.googlehelp.service.GoogleHelpService
-su -c pm enable com.google.android.gms/.googlehelp.service.VideoCallStatusUpdateService
-su -c pm enable com.google.android.gms/.kids.account.AccountRemovalConfirmActivity
-su -c pm enable com.google.android.gms/.kids.account.AccountSetupActivity
-su -c pm enable com.google.android.gms/.kids.account.ShowAppsActivity
-su -c pm enable com.google.android.gms/.kids.account.activities.RegisterProfileOwnerActivity
-su -c pm enable com.google.android.gms/.kids.creation.activities.FamilyCreationActivity
-su -c pm enable com.google.android.gms/.kids.chimera.KidsDataProviderProxy
-su -c pm enable com.google.android.gms/.kids.account.receiver.ProfileOwnerReceiver
-su -c pm enable com.google.android.gms/.kids.chimera.AccountChangeReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.AccountSetupCompletedReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.DeviceTimeAndDateChangeReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.InternalEventReceiverLmpProxy
-su -c pm enable com.google.android.gms/.kids.chimera.InternalEventReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.LocationModeChangedReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.PackageChangedReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.SystemEventReceiverProxy
-su -c pm enable com.google.android.gms/.kids.chimera.LongRunningServiceProxy
-su -c pm enable com.google.android.gms/.kids.common.sync.ManualSyncReceiver
-su -c pm enable com.google.android.gms/.kids.GcmReceiverService
-su -c pm enable com.google.android.gms/.kids.chimera.AccountSetupServiceProxy
-su -c pm enable com.google.android.gms/.kids.chimera.KidsApiServiceProxy
-su -c pm enable com.google.android.gms/.kids.chimera.KidsDataSyncServiceProxy
-su -c pm enable com.google.android.gms/.kids.chimera.KidsServiceProxy
-su -c pm enable com.google.android.gms/.kids.chimera.SlowOperationServiceProxy
-su -c pm enable com.google.android.gms/.kids.chimera.TimeoutsSystemAlertServiceProxy
-su -c pm enable com.google.android.gms/.kids.device.RingService
-su -c pm enable com.google.android.gms/.nearby.messages.settings.NearbyMessagesAppOptInActivity
-su -c pm enable com.google.android.gms/.nearby.settings.NearbyAccessActivity
-su -c pm enable com.google.android.gms/.nearby.settings.NearbySettingsActivity
-su -c pm enable com.google.android.gms/.nearby.messages.NearbyMessagesBroadcastReceiver
-su -c pm enable com.google.android.gms/.nearby.settings.NearbyAppUninstallReceiver
-su -c pm enable com.google.android.gms/.nearby.bootstrap.service.NearbyBootstrapService
-su -c pm enable com.google.android.gms/.nearby.connection.service.NearbyConnectionsAndroidService
-su -c pm enable com.google.android.gms/.nearby.connection.service.NearbyConnectionsAsyncService
-su -c pm enable com.google.android.gms/.nearby.messages.service.NearbyMessagesService
-su -c pm enable com.google.android.gms/.nearby.sharing.service.NearbySharingService
-su -c pm enable com.google.android.gms/.phenotype.receiver.PhenotypeBroadcastReceiver
-su -c pm enable com.google.android.gms/.phenotype.service.PhenotypeCommitService
-su -c pm enable com.google.android.gms/.phenotype.service.PhenotypeIntentService
-su -c pm enable com.google.android.gms/.phenotype.service.PhenotypeService
-su -c pm enable com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator
-su -c pm enable com.google.android.gms/.phenotype.service.util.PhenotypeDebugService
-su -c pm enable com.google.android.gms/.pseudonymous.service.PseudonymousIdIntentService
-su -c pm enable com.google.android.gms/.pseudonymous.service.PseudonymousIdService
-su -c pm enable com.google.android.gms/.photos.autobackup.ui.AutoBackupSettingsActivity
-su -c pm enable com.google.android.gms/.photos.autobackup.ui.AutoBackupSettingsRedirectActivity
-su -c pm enable com.google.android.gms/.photos.autobackup.ui.LocalFoldersBackupSettings
-su -c pm enable com.google.android.gms/.photos.autobackup.ui.promo.AutoBackupPromoActivity
-su -c pm enable com.google.android.gms/.photos.InitializePhotosIntentReceiver
-su -c pm enable com.google.android.gms/.photos.autobackup.AutoBackupWorkService
-su -c pm enable com.google.android.gms/.photos.autobackup.service.AutoBackupService
-su -c pm enable com.google.android.gms/.playlog.service.MonitorAlarmReceiver
-su -c pm enable com.google.android.gms/.playlog.service.WallClockChangedReceiver
-su -c pm enable com.google.android.gms/.playlog.service.MonitorService
-su -c pm enable com.google.android.gms/.playlog.service.PlayLogBrokerService
-su -c pm enable com.google.android.gms/.playlog.service.PlayLogIntentService
-su -c pm enable com.google.android.gms/.playlog.uploader.RequestUploadService
-su -c pm enable com.google.android.gms/.playlog.uploader.UploaderService
-su -c pm enable com.google.android.gms/.plus.activity.AccountSignUpActivity
-su -c pm enable com.google.android.gms/.plus.apps.ListAppsActivity
-su -c pm enable com.google.android.gms/.plus.apps.ManageAppActivity
-su -c pm enable com.google.android.gms/.plus.apps.ManageDeviceActivity
-su -c pm enable com.google.android.gms/.plus.apps.ManageMomentActivity
-su -c pm enable com.google.android.gms/.plus.audience.AclSelectionActivity
-su -c pm enable com.google.android.gms/.plus.audience.AudienceSearchActivity
-su -c pm enable com.google.android.gms/.plus.audience.CircleCreationActivity
-su -c pm enable com.google.android.gms/.plus.audience.CircleSelectionActivity
-su -c pm enable com.google.android.gms/.plus.audience.FaclSelectionActivity
-su -c pm enable com.google.android.gms/.plus.audience.UpdateActionOnlyActivity
-su -c pm enable com.google.android.gms/.plus.audience.UpdateCirclesActivity
-su -c pm enable com.google.android.gms/.plus.circles.AddToCircleConsentActivity
-su -c pm enable com.google.android.gms/.plus.oob.PlusActivity
-su -c pm enable com.google.android.gms/.plus.oob.UpgradeAccountActivity
-su -c pm enable com.google.android.gms/.plus.oob.UpgradeAccountInfoActivity
-su -c pm enable com.google.android.gms/.plus.plusone.PlusOneActivity
-su -c pm enable com.google.android.gms/.plus.sharebox.AddToCircleActivity
-su -c pm enable com.google.android.gms/.plus.sharebox.ReplyBoxActivity
-su -c pm enable com.google.android.gms/.plus.sharebox.ShareBoxActivity
-su -c pm enable com.google.android.gms/.plus.provider.PlusProvider
-su -c pm enable com.google.android.gms/.plus.service.DefaultIntentService
-su -c pm enable com.google.android.gms/.plus.service.ImageIntentService
-su -c pm enable com.google.android.gms/.plus.service.OfflineActionSyncAdapterService
-su -c pm enable com.google.android.gms/.plus.service.PlusService
-su -c pm enable com.google.android.gms/.wifi.gatherer2.receiver.WifiStateChangeReceiver
-su -c pm enable com.google.android.gms/.wifi.gatherer2.receiver.GoogleAccountChangeReceiver
-su -c pm enable com.google.android.gms/.wifi.gatherer2.service.GcmReceiverService
-su -c pm enable com.google.android.gms/.wifi.gatherer2.service.WifiUpdateRetryTaskService
-su -c pm enable com.google.android.gms/.wifi.gatherer2.service.KeyManagerServce
-su -c pm enable com.google.android.gms/.ads.measurement.GmpConversionTrackingBrokerService
-su -c pm enable com.google.android.gms/.measurement.service.MeasurementBrokerService
-su -c pm enable com.google.android.gms/.perfprofile.uploader.PerfProfileCollectorService
-su -c pm enable com.google.android.gms/.perfprofile.uploader.RequestPerfProfileCollectionService
-su -c pm enable com.google.android.gsf/.update.SystemUpdateActivity
-su -c pm enable com.google.android.gsf/.update.SystemUpdatePanoActivity
-su -c pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$Receiver
-su -c pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$SecretCodeReceiver
-su -c pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$TriggerReceiver
-su -c pm enable com.google.android.gsf/.checkin.EventLogService$Receiver
-su -c pm enable com.google.android.gsf/.update.SystemUpdateService$Receiver
-su -c pm enable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
-su -c pm enable com.google.android.gsf/.checkin.CheckinService
-su -c pm enable com.google.android.gsf/.checkin.EventLogService
-su -c pm enable com.google.android.gsf/.update.SystemUpdateService
-su -c "pm enable com.google.android.gms/com.google.android.gms.ads.identifier.service.AdvertisingIdNotificationService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.ads.identifier.service.AdvertisingIdService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.analytics.AnalyticsService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.analytics.AnalyticsTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.stats.eastworld.EastworldService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.stats.service.DropBoxEntryAddedService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.stats.PlatformStatsCollectorService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.common.stats.GmsCoreStatsService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.common.stats.StatsUploadService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.backup.stats.BackupStatsService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.checkin.CheckinApiService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.checkin.CheckinService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tron.CollectionService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.common.config.PhenotypeCheckinService"
-su -c "pm enable com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.feedback.FeedbackAsyncService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.feedback.LegacyBugReportService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.feedback.OfflineReportSendTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.googlehelp.metrics.ReportBatchedMetricsGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.locationsharingreporter.service.reporting.periodic.PeriodicReporterMonitoringService"
-su -c "pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService"
-su -c "pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingSyncService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.common.stats.net.NetworkReportService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.presencemanager.service.PresenceManagerPresenceReportService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.usagereporting.service.UsageReportingIntentService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService_Isolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService_Persistent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService_Isolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService_Persistent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService_Isolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService_Persistent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.service.CastPersistentService_Persistent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService_Isolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService_Persistent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.CastPersistentBoundBrokerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.messages.debug.DebugPokeService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.clearcut.debug.ClearcutDebugDumpService"
-su -c "pm enable com.google.firebase.components.ComponentDiscoveryService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService"
-su -c "pm enable com.google.android.gms/com.google.mlkit.common.internal.MlKitComponentDiscoveryService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.geotimezone.GeoTimeZoneService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.location.geocode.GeocodeService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService_AuthAccountIsolated com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService_AuthAccountIsolate"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentApiService_AuthAccountIsolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentIntentOperationService_AuthAccountIsolated"
-su -c "pm enable com.google.android.gms/com.google.android.gms.auth.folsom.service.FolsomPublicKeyUpdateService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fonts.update.UpdateSchedulerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.icing.proxy.IcingInternalCorporaUpdateService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.instantapps.routing.DomainFilterUpdateService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.mobiledataplan.service.PeriodicUpdaterService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.phenotype.service.sync.PackageUpdateTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.update.SystemUpdateGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.update.SystemUpdateService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.update.UpdateFromSdCardService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.backup.wear.BackupSettingsListenerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.dck.service.DckWearableListenerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncAccountService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncConfigService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncConnectionService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncMessageService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.wearables.WearableSyncService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.wearable.service.WearableControlService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.wearable.service.WearableService"
-#su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.fastpair.service.WearableDataListenerService"
-su -c "pm enable com.google.android.gms/com.google.android.location.wearable.WearableLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.location.fused.wearable.GmsWearableListenerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.mdm.services.MdmPhoneWearableListenerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tapandpay.wear.WearProxyService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.auth.trustagent.GoogleTrustAgent"
-su -c "pm enable com.google.android.gms/com.google.android.gms.trustagent.api.bridge.TrustAgentBridgeService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.trustagent.api.state.TrustAgentState"
-su -c "pm enable com.google.android.gms/com.google.android.gms.enpromo.PromoInternalPersistentService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.enpromo.PromoInternalService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyLocationService" 
-su -c "pm enable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyPersistentService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.kids.chimera.KidsServiceProxy"
-su -c "pm enable com.google.android.gms/com.google.android.gms.personalsafety.service.PersonalSafetyService"
-ui_print "✦ Disabled emergency features and child safety services."
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.cache.DataUpdateListenerCacheService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.ble.FitBleBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.config.FitConfigBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.goals.FitGoalsBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.history.FitHistoryBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.internal.FitInternalBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.proxy.FitProxyBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.recording.FitRecordingBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.sensors.FitSensorsBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.service.sessions.FitSessionsBroker"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.sensors.sample.CollectSensorService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.sync.FitnessSyncAdapterService" 
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.sync.SyncGcmTaskService"
-ui_print "✦ Disabled Google Fit health tracking services."
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.bootstrap.service.NearbyBootstrapService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.connection.service.NearbyConnectionsAndroidService"
-su -c "pm enable com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.romanesco.ContactsLoggerUploadService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.magictether.logging.DailyMetricsLoggerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.checkin.EventLogService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.backup.component.FullBackupJobLoggerService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.safebrowsing.SafeBrowsingUpdateTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.verifier.ApkUploadService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.verifier.InternalApkUploadService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetIdleTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetNormalTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tapandpay.security.StorageKeyCacheService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.pay.security.storagekey.service.StorageKeyCacheService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tapandpay.globalactions.QuickAccessWalletService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.tapandpay.globalactions.WalletQuickAccessWalletService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.pay.notifications.PayNotificationService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.wallet.service.PaymentService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.wallet.service.WalletGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.cache.DataUpdateListenerCacheService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.sensors.sample.CollectSensorService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.fitness.sync.SyncGcmTaskService"
-su -c "pm enable com.google.android.gms/com.google.android.location.fused.FusedLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.location.network.NetworkLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.location.persistent.LocationPersistentService"
-su -c "pm enable com.google.android.gms/com.google.android.location.reporting.service.LocationHistoryInjectorService"
-su -c "pm enable com.google.android.gms/com.google.android.location.util.LocationAccuracyInjectorService"
-su -c "pm enable com.google.android.gms/com.google.android.location.wearable.WearableLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.locationsharing.service.LocationSharingSettingInjectorService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.locationsharing.service.LocationSharingService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.semanticlocation.service.SemanticLocationService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesSignInIntentServiceProxy"
-su -c "pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesSyncServiceNotificationProxy"
-su -c "pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesUploadServiceProxy"
-su -c "pm enable com.google.android.gms/com.google.android.gms.gp.gameservice.GameService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.gp.gameservice.GameSessionService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.GmsApiServiceNoInstantApps"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentApiServiceNoInstantApps"
-su -c "pm enable com.google.android.gms/com.google.android.gms.instantapps.service.InstantAppsService"
-su -c "pm enable com.google.android.gms/com.google.android.gms.chimera.UiApiServiceNoInstantApps"
+pm enable com.google.android.gms/.ads.settings.AdsSettingsActivity
+pm enable com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorActivity
+pm enable com.google.android.gms/com.google.android.location.places.ui.aliaseditor.AliasEditorMapActivity
+pm enable com.google.android.gms/com.google.android.location.settings.ActivityRecognitionPermissionActivity
+pm enable com.google.android.gms/com.google.android.location.settings.GoogleLocationSettingsActivity
+pm enable com.google.android.gms/com.google.android.location.settings.LocationHistorySettingsActivity
+pm enable com.google.android.gms/com.google.android.location.settings.LocationSettingsCheckerActivity
+pm enable com.google.android.gms/.usagereporting.settings.UsageReportingActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.SystemAppTrampolineActivity
+pm enable com.google.android.gms/.feedback.AnnotateScreenshotActivity
+pm enable com.google.android.gms/.ads.adinfo.AdvertisingInfoContentProvider
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingContentProvider
+pm enable com.google.android.gms/com.google.android.location.internal.LocationContentProvider
+pm enable com.google.android.gms/.common.stats.net.contentprovider.NetworkUsageContentProvider
+pm enable com.google.android.gms/.ads.config.GServicesChangedReceiver
+pm enable com.google.android.gms/com.google.android.contextmanager.systemstate.SystemStateReceiver
+pm enable com.google.android.gms/.ads.jams.SystemEventReceiver
+pm enable com.google.android.gms/.ads.config.FlagsReceiver
+pm enable com.google.android.gms/.ads.social.DoritosReceiver
+pm enable com.google.android.gms/.analytics.AnalyticsReceiver
+pm enable com.google.android.gms/.analytics.internal.GServicesChangedReceiver
+pm enable com.google.android.gms/.common.analytics.CoreAnalyticsReceiver
+pm enable com.google.android.gms/.common.stats.GmsCoreStatsServiceLauncher
+pm enable com.google.android.gms/com.google.android.location.internal.AnalyticsSamplerReceiver
+pm enable com.google.android.gms/.checkin.CheckinService$ActiveReceiver
+pm enable com.google.android.gms/.checkin.CheckinService$ClockworkFallbackReceiver
+pm enable com.google.android.gms/.checkin.CheckinService$ImposeReceiver
+pm enable com.google.android.gms/.checkin.CheckinService$SecretCodeReceiver
+pm enable com.google.android.gms/.checkin.CheckinService$TriggerReceiver
+pm enable com.google.android.gms/.checkin.EventLogService$Receiver
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ExternalChangeReceiver
+pm enable com.google.android.gms/com.google.android.location.reporting.service.GcmRegistrationReceiver
+pm enable com.google.android.gms/com.google.android.location.copresence.GcmRegistrationReceiver
+pm enable com.google.android.gms/com.google.android.location.copresence.GservicesBroadcastReceiver
+pm enable com.google.android.gms/com.google.android.location.internal.LocationProviderEnabler
+pm enable com.google.android.gms/com.google.android.location.internal.NlpNetworkProviderSettingsUpdateReceiver
+pm enable com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity$LocationModeChangingReceiver
+pm enable com.google.android.gms/com.google.android.location.places.ImplicitSignalsReceiver
+pm enable com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitor
+pm enable com.google.android.gms/.location.copresence.GcmBroadcastReceiver
+pm enable com.google.android.gms/.location.reporting.service.GcmBroadcastReceiver
+pm enable com.google.android.gms/.social.location.GservicesBroadcastReceiver
+pm enable com.google.android.gms/.update.SystemUpdateService$Receiver
+pm enable com.google.android.gms/.update.SystemUpdateService$OtaPolicyReceiver
+pm enable com.google.android.gms/.update.SystemUpdateService$SecretCodeReceiver
+pm enable com.google.android.gms/.update.SystemUpdateService$ActiveReceiver
+pm enable com.google.android.gms/com.google.android.contextmanager.service.ContextManagerService
+pm enable com.google.android.gms/.ads.AdRequestBrokerService
+pm enable com.google.android.gms/.ads.GservicesValueBrokerService
+pm enable com.google.android.gms/.ads.identifier.service.AdvertisingIdNotificationService
+pm enable com.google.android.gms/.ads.identifier.service.AdvertisingIdService
+pm enable com.google.android.gms/.ads.jams.NegotiationService
+pm enable com.google.android.gms/.ads.pan.PanService
+pm enable com.google.android.gms/.ads.social.GcmSchedulerWakeupService
+pm enable com.google.android.gms/.analytics.AnalyticsService
+pm enable com.google.android.gms/.analytics.internal.PlayLogReportingService
+pm enable com.google.android.gms/.analytics.service.AnalyticsService
+pm enable com.google.android.gms/.analytics.service.PlayLogMonitorIntervalService
+pm enable com.google.android.gms/.analytics.service.RefreshEnabledStateService
+pm enable com.google.android.gms/.auth.be.proximity.authorization.userpresence.UserPresenceService
+pm enable com.google.android.gms/.common.analytics.CoreAnalyticsIntentService
+pm enable com.google.android.gms/.common.stats.GmsCoreStatsService
+pm enable com.google.android.gms/.backup.BackupStatsService
+pm enable com.google.android.gms/.deviceconnection.service.DeviceConnectionAsyncService
+pm enable com.google.android.gms/.deviceconnection.service.DeviceConnectionServiceBroker
+pm enable com.google.android.gms/.wallet.service.analytics.AnalyticsIntentService
+pm enable com.google.android.gms/.checkin.CheckinService
+pm enable com.google.android.gms/.checkin.EventLogService
+pm enable com.google.android.gms/com.google.android.location.internal.AnalyticsUploadIntentService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.DeleteHistoryService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.DispatchingService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.InternalPreferenceServiceDoNotUse
+pm enable com.google.android.gms/com.google.android.location.reporting.service.LocationHistoryInjectorService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingSyncService
+pm enable com.google.android.gms/com.google.android.location.activity.HardwareArProviderService
+pm enable com.google.android.gms/com.google.android.location.fused.FusedLocationService
+pm enable com.google.android.gms/com.google.android.location.fused.service.FusedProviderService
+pm enable com.google.android.gms/com.google.android.location.geocode.GeocodeService
+pm enable com.google.android.gms/com.google.android.location.geofencer.service.GeofenceProviderService
+pm enable com.google.android.gms/com.google.android.location.internal.GoogleLocationManagerService
+pm enable com.google.android.gms/com.google.android.location.places.PlaylogService
+pm enable com.google.android.gms/com.google.android.location.places.service.GeoDataService
+pm enable com.google.android.gms/com.google.android.location.places.service.PlaceDetectionService
+pm enable com.google.android.gms/com.google.android.libraries.social.mediamonitor.MediaMonitorIntentService
+pm enable com.google.android.gms/.config.ConfigService
+pm enable com.google.android.gms/.stats.PlatformStatsCollectorService
+pm enable com.google.android.gms/.usagereporting.service.UsageReportingService
+pm enable com.google.android.gms/.update.SystemUpdateService
+pm enable com.google.android.gms/com.google.android.location.network.ConfirmAlertActivity
+pm enable com.google.android.gms/com.google.android.location.network.LocationProviderChangeReceiver
+pm enable com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
+pm enable com.google.android.gms/com.google.android.location.internal.PendingIntentCallbackService
+pm enable com.google.android.gms/com.google.android.location.network.NetworkLocationService
+pm enable com.google.android.gms/com.google.android.location.util.PreferenceService
+pm enable com.google.android.gms/.fitness.settings.FitnessSettingsActivity
+pm enable com.google.android.gms/.fitness.sync.FitnessContentProvider
+pm enable com.google.android.gms/.fitness.disconnect.FitDisconnectReceiver
+pm enable com.google.android.gms/.fitness.sensors.sample.CollectSensorReceiver
+pm enable com.google.android.gms/.fitness.service.FitnessInitReceiver
+pm enable com.google.android.gms/.fitness.wearables.WearableSyncServiceReceiver
+pm enable com.google.android.gms/.fitness.disconnect.FitCleanupService
+pm enable com.google.android.gms/.fitness.sensors.activity.ActivityRecognitionService
+pm enable com.google.android.gms/.fitness.sensors.floorchange.FloorChangeRecognitionService
+pm enable com.google.android.gms/.fitness.sensors.sample.CollectSensorService
+pm enable com.google.android.gms/.fitness.service.DebugIntentService
+pm enable com.google.android.gms/.fitness.service.ble.FitBleBroker
+pm enable com.google.android.gms/.fitness.service.config.FitConfigBroker
+pm enable com.google.android.gms/.fitness.service.history.FitHistoryBroker
+pm enable com.google.android.gms/.fitness.service.internal.FitInternalBroker
+pm enable com.google.android.gms/.fitness.service.proxy.FitProxyBroker
+pm enable com.google.android.gms/.fitness.service.recording.FitRecordingBroker
+pm enable com.google.android.gms/.fitness.service.sensors.FitSensorsBroker
+pm enable com.google.android.gms/.fitness.service.sessions.FitSessionsBroker
+pm enable com.google.android.gms/.fitness.store.maintenance.StoreMaintenanceService
+pm enable com.google.android.gms/.fitness.sync.FitnessSyncAdapterService
+pm enable com.google.android.gms/.fitness.wearables.WearableSyncService
+pm enable com.google.android.gms/.car.BroadcastRedirectActivity
+pm enable com.google.android.gms/.car.CarErrorDisplayActivity
+pm enable com.google.android.gms/.car.CarHomeActivity
+pm enable com.google.android.gms/.car.CarHomeActivity1
+pm enable com.google.android.gms/.car.CarHomeActivity2
+pm enable com.google.android.gms/.car.CarServiceSettingsActivity
+pm enable com.google.android.gms/.car.FirstActivity
+pm enable com.google.android.gms/.car.SetupActivity
+pm enable com.google.android.gms/.car.CarIntentService
+pm enable com.google.android.gms/.car.CarService
+pm enable com.google.android.gms/.car.InCallServiceImpl
+pm enable com.google.android.gms/.car.VoiceActionService
+pm enable com.google.android.gms/.car.diagnostics.CrashReporterService
+pm enable com.google.android.gms/.feedback.FeedbackActivity
+pm enable com.google.android.gms/.feedback.IntentListenerFeedbackActivity
+pm enable com.google.android.gms/.feedback.PreviewActivity
+pm enable com.google.android.gms/.feedback.PreviewScreenshotActivity
+pm enable com.google.android.gms/.feedback.ShowTextActivity
+pm enable com.google.android.gms/.feedback.SuggestionsActivity
+pm enable com.google.android.gms/.feedback.FeedbackConnectivityReceiver
+pm enable com.google.android.gms/.feedback.FeedbackAsyncService
+pm enable com.google.android.gms/.feedback.FeedbackService
+pm enable com.google.android.gms/.feedback.LegacyBugReportService
+pm enable com.google.android.gms/.feedback.SendService
+pm enable com.google.android.gms/.googlehelp.helpactivities.ClickToCallActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.EmailActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.HelpActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.OpenHangoutActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.OpenHelpActivity
+pm enable com.google.android.gms/.googlehelp.helpactivities.RealtimeSupportClassifierActivity
+pm enable com.google.android.gms/.googlehelp.webview.GoogleHelpWebViewActivity
+pm enable com.google.android.gms/.googlehelp.GcmBroadcastReceiver
+pm enable com.google.android.gms/.googlehelp.metrics.ConnectivityBroadcastReceiver
+pm enable com.google.android.gms/.googlehelp.metrics.MetricsReportService
+pm enable com.google.android.gms/.googlehelp.metrics.ReportBatchedMetricsService
+pm enable com.google.android.gms/.googlehelp.service.ChatStatusUpdateService
+pm enable com.google.android.gms/.googlehelp.service.ClearHelpHistoryIntentService
+pm enable com.google.android.gms/.googlehelp.service.GoogleHelpService
+pm enable com.google.android.gms/.googlehelp.service.VideoCallStatusUpdateService
+pm enable com.google.android.gms/.kids.account.AccountRemovalConfirmActivity
+pm enable com.google.android.gms/.kids.account.AccountSetupActivity
+pm enable com.google.android.gms/.kids.account.ShowAppsActivity
+pm enable com.google.android.gms/.kids.account.activities.RegisterProfileOwnerActivity
+pm enable com.google.android.gms/.kids.creation.activities.FamilyCreationActivity
+pm enable com.google.android.gms/.kids.chimera.KidsDataProviderProxy
+pm enable com.google.android.gms/.kids.account.receiver.ProfileOwnerReceiver
+pm enable com.google.android.gms/.kids.chimera.AccountChangeReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.AccountSetupCompletedReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.DeviceTimeAndDateChangeReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.InternalEventReceiverLmpProxy
+pm enable com.google.android.gms/.kids.chimera.InternalEventReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.LocationModeChangedReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.PackageChangedReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.SystemEventReceiverProxy
+pm enable com.google.android.gms/.kids.chimera.LongRunningServiceProxy
+pm enable com.google.android.gms/.kids.common.sync.ManualSyncReceiver
+pm enable com.google.android.gms/.kids.GcmReceiverService
+pm enable com.google.android.gms/.kids.chimera.AccountSetupServiceProxy
+pm enable com.google.android.gms/.kids.chimera.KidsApiServiceProxy
+pm enable com.google.android.gms/.kids.chimera.KidsDataSyncServiceProxy
+pm enable com.google.android.gms/.kids.chimera.KidsServiceProxy
+pm enable com.google.android.gms/.kids.chimera.SlowOperationServiceProxy
+pm enable com.google.android.gms/.kids.chimera.TimeoutsSystemAlertServiceProxy
+pm enable com.google.android.gms/.kids.device.RingService
+pm enable com.google.android.gms/.nearby.messages.settings.NearbyMessagesAppOptInActivity
+pm enable com.google.android.gms/.nearby.settings.NearbyAccessActivity
+pm enable com.google.android.gms/.nearby.settings.NearbySettingsActivity
+pm enable com.google.android.gms/.nearby.messages.NearbyMessagesBroadcastReceiver
+pm enable com.google.android.gms/.nearby.settings.NearbyAppUninstallReceiver
+pm enable com.google.android.gms/.nearby.bootstrap.service.NearbyBootstrapService
+pm enable com.google.android.gms/.nearby.connection.service.NearbyConnectionsAndroidService
+pm enable com.google.android.gms/.nearby.connection.service.NearbyConnectionsAsyncService
+pm enable com.google.android.gms/.nearby.messages.service.NearbyMessagesService
+pm enable com.google.android.gms/.nearby.sharing.service.NearbySharingService
+pm enable com.google.android.gms/.phenotype.receiver.PhenotypeBroadcastReceiver
+pm enable com.google.android.gms/.phenotype.service.PhenotypeCommitService
+pm enable com.google.android.gms/.phenotype.service.PhenotypeIntentService
+pm enable com.google.android.gms/.phenotype.service.PhenotypeService
+pm enable com.google.android.gms/.phenotype.service.sync.PhenotypeConfigurator
+pm enable com.google.android.gms/.phenotype.service.util.PhenotypeDebugService
+pm enable com.google.android.gms/.pseudonymous.service.PseudonymousIdIntentService
+pm enable com.google.android.gms/.pseudonymous.service.PseudonymousIdService
+pm enable com.google.android.gms/.photos.autobackup.ui.AutoBackupSettingsActivity
+pm enable com.google.android.gms/.photos.autobackup.ui.AutoBackupSettingsRedirectActivity
+pm enable com.google.android.gms/.photos.autobackup.ui.LocalFoldersBackupSettings
+pm enable com.google.android.gms/.photos.autobackup.ui.promo.AutoBackupPromoActivity
+pm enable com.google.android.gms/.photos.InitializePhotosIntentReceiver
+pm enable com.google.android.gms/.photos.autobackup.AutoBackupWorkService
+pm enable com.google.android.gms/.photos.autobackup.service.AutoBackupService
+pm enable com.google.android.gms/.playlog.service.MonitorAlarmReceiver
+pm enable com.google.android.gms/.playlog.service.WallClockChangedReceiver
+pm enable com.google.android.gms/.playlog.service.MonitorService
+pm enable com.google.android.gms/.playlog.service.PlayLogBrokerService
+pm enable com.google.android.gms/.playlog.service.PlayLogIntentService
+pm enable com.google.android.gms/.playlog.uploader.RequestUploadService
+pm enable com.google.android.gms/.playlog.uploader.UploaderService
+pm enable com.google.android.gms/.plus.activity.AccountSignUpActivity
+pm enable com.google.android.gms/.plus.apps.ListAppsActivity
+pm enable com.google.android.gms/.plus.apps.ManageAppActivity
+pm enable com.google.android.gms/.plus.apps.ManageDeviceActivity
+pm enable com.google.android.gms/.plus.apps.ManageMomentActivity
+pm enable com.google.android.gms/.plus.audience.AclSelectionActivity
+pm enable com.google.android.gms/.plus.audience.AudienceSearchActivity
+pm enable com.google.android.gms/.plus.audience.CircleCreationActivity
+pm enable com.google.android.gms/.plus.audience.CircleSelectionActivity
+pm enable com.google.android.gms/.plus.audience.FaclSelectionActivity
+pm enable com.google.android.gms/.plus.audience.UpdateActionOnlyActivity
+pm enable com.google.android.gms/.plus.audience.UpdateCirclesActivity
+pm enable com.google.android.gms/.plus.circles.AddToCircleConsentActivity
+pm enable com.google.android.gms/.plus.oob.PlusActivity
+pm enable com.google.android.gms/.plus.oob.UpgradeAccountActivity
+pm enable com.google.android.gms/.plus.oob.UpgradeAccountInfoActivity
+pm enable com.google.android.gms/.plus.plusone.PlusOneActivity
+pm enable com.google.android.gms/.plus.sharebox.AddToCircleActivity
+pm enable com.google.android.gms/.plus.sharebox.ReplyBoxActivity
+pm enable com.google.android.gms/.plus.sharebox.ShareBoxActivity
+pm enable com.google.android.gms/.plus.provider.PlusProvider
+pm enable com.google.android.gms/.plus.service.DefaultIntentService
+pm enable com.google.android.gms/.plus.service.ImageIntentService
+pm enable com.google.android.gms/.plus.service.OfflineActionSyncAdapterService
+pm enable com.google.android.gms/.plus.service.PlusService
+pm enable com.google.android.gms/.wifi.gatherer2.receiver.WifiStateChangeReceiver
+pm enable com.google.android.gms/.wifi.gatherer2.receiver.GoogleAccountChangeReceiver
+pm enable com.google.android.gms/.wifi.gatherer2.service.GcmReceiverService
+pm enable com.google.android.gms/.wifi.gatherer2.service.WifiUpdateRetryTaskService
+pm enable com.google.android.gms/.wifi.gatherer2.service.KeyManagerServce
+pm enable com.google.android.gms/.ads.measurement.GmpConversionTrackingBrokerService
+pm enable com.google.android.gms/.measurement.service.MeasurementBrokerService
+pm enable com.google.android.gms/.perfprofile.uploader.PerfProfileCollectorService
+pm enable com.google.android.gms/.perfprofile.uploader.RequestPerfProfileCollectionService
+pm enable com.google.android.gsf/.update.SystemUpdateActivity
+pm enable com.google.android.gsf/.update.SystemUpdatePanoActivity
+pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$Receiver
+pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$SecretCodeReceiver
+pm enable com.google.android.gsf/com.google.android.gsf.checkin.CheckinService\$TriggerReceiver
+pm enable com.google.android.gsf/.checkin.EventLogService$Receiver
+pm enable com.google.android.gsf/.update.SystemUpdateService$Receiver
+pm enable com.google.android.gsf/.update.SystemUpdateService$SecretCodeReceiver
+pm enable com.google.android.gsf/.checkin.CheckinService
+pm enable com.google.android.gsf/.checkin.EventLogService
+pm enable com.google.android.gsf/.update.SystemUpdateService
+pm enable com.google.android.gms/com.google.android.gms.ads.identifier.service.AdvertisingIdNotificationService
+pm enable com.google.android.gms/com.google.android.gms.ads.identifier.service.AdvertisingIdService
+pm enable com.google.android.gms/com.google.android.gms.nearby.mediums.nearfieldcommunication.NfcAdvertisingService
+pm enable com.google.android.gms/com.google.android.gms.analytics.AnalyticsService
+pm enable com.google.android.gms/com.google.android.gms.analytics.AnalyticsTaskService
+pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService
+pm enable com.google.android.gms/com.google.android.gms.stats.eastworld.EastworldService
+pm enable com.google.android.gms/com.google.android.gms.stats.service.DropBoxEntryAddedService
+pm enable com.google.android.gms/com.google.android.gms.stats.PlatformStatsCollectorService
+pm enable com.google.android.gms/com.google.android.gms.common.stats.GmsCoreStatsService
+pm enable com.google.android.gms/com.google.android.gms.common.stats.StatsUploadService
+pm enable com.google.android.gms/com.google.android.gms.backup.stats.BackupStatsService
+pm enable com.google.android.gms/com.google.android.gms.checkin.CheckinApiService
+pm enable com.google.android.gms/com.google.android.gms.checkin.CheckinService
+pm enable com.google.android.gms/com.google.android.gms.tron.CollectionService
+pm enable com.google.android.gms/com.google.android.gms.common.config.PhenotypeCheckinService
+pm enable com.google.android.gms/com.google.android.location.internal.server.HardwareArProviderService
+pm enable com.google.android.gms/com.google.android.gms.feedback.FeedbackAsyncService
+pm enable com.google.android.gms/com.google.android.gms.feedback.LegacyBugReportService
+pm enable com.google.android.gms/com.google.android.gms.feedback.OfflineReportSendTaskService
+pm enable com.google.android.gms/com.google.android.gms.googlehelp.metrics.ReportBatchedMetricsGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService
+pm enable com.google.android.gms/com.google.android.gms.locationsharingreporter.service.reporting.periodic.PeriodicReporterMonitoringService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingAndroidService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.ReportingSyncService
+pm enable com.google.android.gms/com.google.android.gms.common.stats.net.NetworkReportService
+pm enable com.google.android.gms/com.google.android.gms.presencemanager.service.PresenceManagerPresenceReportService
+pm enable com.google.android.gms/com.google.android.gms.usagereporting.service.UsageReportingIntentService
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService_Isolated
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRoute2ProviderService_Persistent
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService_Isolated
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastMediaRouteProviderService_Persistent
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService_Isolated
+pm enable com.google.android.gms/com.google.android.gms.cast.media.CastRemoteDisplayProviderService_Persistent
+pm enable com.google.android.gms/com.google.android.gms.cast.service.CastPersistentService_Persistent
+pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService
+pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService_Isolated
+pm enable com.google.android.gms/com.google.android.gms.cast.service.CastSocketMultiplexerLifeCycleService_Persistent
+pm enable com.google.android.gms/com.google.android.gms.chimera.CastPersistentBoundBrokerService
+pm enable com.google.android.gms/com.google.android.gms.nearby.messages.debug.DebugPokeService
+pm enable com.google.android.gms/com.google.android.gms.clearcut.debug.ClearcutDebugDumpService
+pm enable com.google.firebase.components.ComponentDiscoveryService
+pm enable com.google.android.gms/com.google.android.gms.nearby.discovery.service.DiscoveryService
+pm enable com.google.android.gms/com.google.mlkit.common.internal.MlKitComponentDiscoveryService
+pm enable com.google.android.gms/com.google.android.gms.geotimezone.GeoTimeZoneService
+pm enable com.google.android.gms/com.google.android.gms.location.geocode.GeocodeService
+pm enable com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService_AuthAccountIsolated com.google.android.gms/com.google.android.gms.chimera.GmsIntentOperationService_AuthAccountIsolate
+pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentApiService_AuthAccountIsolated
+pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentIntentOperationService_AuthAccountIsolated
+pm enable com.google.android.gms/com.google.android.gms.auth.folsom.service.FolsomPublicKeyUpdateService
+pm enable com.google.android.gms/com.google.android.gms.fonts.update.UpdateSchedulerService
+pm enable com.google.android.gms/com.google.android.gms.icing.proxy.IcingInternalCorporaUpdateService
+pm enable com.google.android.gms/com.google.android.gms.instantapps.routing.DomainFilterUpdateService
+pm enable com.google.android.gms/com.google.android.gms.mobiledataplan.service.PeriodicUpdaterService
+pm enable com.google.android.gms/com.google.android.gms.phenotype.service.sync.PackageUpdateTaskService
+pm enable com.google.android.gms/com.google.android.gms.update.SystemUpdateGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.update.SystemUpdateService
+pm enable com.google.android.gms/com.google.android.gms.update.UpdateFromSdCardService
+pm enable com.google.android.gms/com.google.android.gms.backup.wear.BackupSettingsListenerService
+pm enable com.google.android.gms/com.google.android.gms.dck.service.DckWearableListenerService
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncAccountService
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncConfigService
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncConnectionService
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.wearable.WearableSyncMessageService
+pm enable com.google.android.gms/com.google.android.gms.fitness.wearables.WearableSyncService
+pm enable com.google.android.gms/com.google.android.gms.wearable.service.WearableControlService
+pm enable com.google.android.gms/com.google.android.gms.wearable.service.WearableService
+#pm enable com.google.android.gms/com.google.android.gms.nearby.fastpair.service.WearableDataListenerService
+pm enable com.google.android.gms/com.google.android.location.wearable.WearableLocationService
+pm enable com.google.android.gms/com.google.android.location.fused.wearable.GmsWearableListenerService
+pm enable com.google.android.gms/com.google.android.gms.mdm.services.MdmPhoneWearableListenerService
+pm enable com.google.android.gms/com.google.android.gms.tapandpay.wear.WearProxyService
+pm enable com.google.android.gms/com.google.android.gms.auth.trustagent.GoogleTrustAgent
+pm enable com.google.android.gms/com.google.android.gms.trustagent.api.bridge.TrustAgentBridgeService
+pm enable com.google.android.gms/com.google.android.gms.trustagent.api.state.TrustAgentState
+pm enable com.google.android.gms/com.google.android.gms.enpromo.PromoInternalPersistentService
+pm enable com.google.android.gms/com.google.android.gms.enpromo.PromoInternalService
+pm enable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyLocationService 
+pm enable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyPersistentService
+pm enable com.google.android.gms/com.google.android.gms.kids.chimera.KidsServiceProxy
+pm enable com.google.android.gms/com.google.android.gms.personalsafety.service.PersonalSafetyService
+pm enable com.google.android.gms/com.google.android.gms.fitness.cache.DataUpdateListenerCacheService
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.ble.FitBleBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.config.FitConfigBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.goals.FitGoalsBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.history.FitHistoryBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.internal.FitInternalBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.proxy.FitProxyBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.recording.FitRecordingBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.sensors.FitSensorsBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.service.sessions.FitSessionsBroker
+pm enable com.google.android.gms/com.google.android.gms.fitness.sensors.sample.CollectSensorService
+pm enable com.google.android.gms/com.google.android.gms.fitness.sync.FitnessSyncAdapterService 
+pm enable com.google.android.gms/com.google.android.gms.fitness.sync.SyncGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.nearby.bootstrap.service.NearbyBootstrapService
+pm enable com.google.android.gms/com.google.android.gms.nearby.connection.service.NearbyConnectionsAndroidService
+pm enable com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService
+pm enable com.google.android.gms/com.google.android.gms.nearby.messages.service.NearbyMessagesService
+pm enable com.google.android.gms/com.google.android.gms.analytics.internal.PlayLogReportingService
+pm enable com.google.android.gms/com.google.android.gms.romanesco.ContactsLoggerUploadService
+pm enable com.google.android.gms/com.google.android.gms.magictether.logging.DailyMetricsLoggerService
+pm enable com.google.android.gms/com.google.android.gms.checkin.EventLogService
+pm enable com.google.android.gms/com.google.android.gms.backup.component.FullBackupJobLoggerService
+pm enable com.google.android.gms/com.google.android.gms.security.safebrowsing.SafeBrowsingUpdateTaskService
+pm enable com.google.android.gms/com.google.android.gms.security.verifier.ApkUploadService
+pm enable com.google.android.gms/com.google.android.gms.security.verifier.InternalApkUploadService
+pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetIdleTaskService
+pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetNormalTaskService
+pm enable com.google.android.gms/com.google.android.gms.security.snet.SnetService
+pm enable com.google.android.gms/com.google.android.gms.tapandpay.security.StorageKeyCacheService
+pm enable com.google.android.gms/com.google.android.gms.droidguard.DroidGuardGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.pay.security.storagekey.service.StorageKeyCacheService
+pm enable com.google.android.gms/com.google.android.gms.tapandpay.gcmtask.TapAndPayGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.tapandpay.globalactions.QuickAccessWalletService
+pm enable com.google.android.gms/com.google.android.gms.tapandpay.globalactions.WalletQuickAccessWalletService
+pm enable com.google.android.gms/com.google.android.gms.pay.gcmtask.PayGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.pay.hce.service.PayHceService
+pm enable com.google.android.gms/com.google.android.gms.pay.notifications.PayNotificationService
+pm enable com.google.android.gms/com.google.android.gms.wallet.service.PaymentService
+pm enable com.google.android.gms/com.google.android.gms.wallet.service.WalletGcmTaskService
+pm enable com.google.android.gms/com.google.android.gms.fitness.cache.DataUpdateListenerCacheService
+pm enable com.google.android.gms/com.google.android.gms.fitness.sensors.sample.CollectSensorService
+pm enable com.google.android.gms/com.google.android.gms.fitness.sync.SyncGcmTaskService
+pm enable com.google.android.gms/com.google.android.location.fused.FusedLocationService
+pm enable com.google.android.gms/com.google.android.location.internal.server.GoogleLocationService
+pm enable com.google.android.gms/com.google.android.location.network.NetworkLocationService
+pm enable com.google.android.gms/com.google.android.location.persistent.LocationPersistentService
+pm enable com.google.android.gms/com.google.android.location.reporting.service.LocationHistoryInjectorService
+pm enable com.google.android.gms/com.google.android.location.util.LocationAccuracyInjectorService
+pm enable com.google.android.gms/com.google.android.location.wearable.WearableLocationService
+pm enable com.google.android.gms/com.google.android.gms.locationsharing.service.LocationSharingSettingInjectorService
+pm enable com.google.android.gms/com.google.android.gms.locationsharing.service.LocationSharingService
+pm enable com.google.android.gms/com.google.android.gms.semanticlocation.service.SemanticLocationService
+pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesSignInIntentServiceProxy
+pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesSyncServiceNotificationProxy
+pm enable com.google.android.gms/com.google.android.gms.games.chimera.GamesUploadServiceProxy
+pm enable com.google.android.gms/com.google.android.gms.gp.gameservice.GameService
+pm enable com.google.android.gms/com.google.android.gms.gp.gameservice.GameSessionService
+pm enable com.google.android.gms/com.google.android.gms.chimera.GmsApiServiceNoInstantApps
+pm enable com.google.android.gms/com.google.android.gms.chimera.PersistentApiServiceNoInstantApps
+pm enable com.google.android.gms/com.google.android.gms.instantapps.service.InstantAppsService
+pm enable com.google.android.gms/com.google.android.gms.chimera.UiApiServiceNoInstantApps
