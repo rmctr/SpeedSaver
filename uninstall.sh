@@ -22,7 +22,7 @@ settings delete global fstrim_mandatory_interval
 
 # Reverse deactivation of Android Rescue Party
 setprop persist.sys.disable_rescue false
-setprop -p persist.sys.disable_rescue false
+resetprop -p persist.sys.disable_rescue false
 
 # Enable GMS services
 #/system/bin/sh
