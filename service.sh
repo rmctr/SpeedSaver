@@ -12,8 +12,9 @@ lock_val() {
 	fi
 }
 
-while [ "$(getprop sys.boot_completed)" != 1 ];
-do sleep 3;
+until [ "$(getprop sys.boot_completed)" = "1" ] && \
+[ -d "/sdcard/Android" ]; do
+  sleep 3
 done
 
 MODDIR=${0%/*}
