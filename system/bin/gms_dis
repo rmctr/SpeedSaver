@@ -343,7 +343,6 @@ pm disable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyLo
 pm disable com.google.android.gms/com.google.android.gms.thunderbird.EmergencyPersistentService
 pm disable com.google.android.gms/com.google.android.gms.kids.chimera.KidsServiceProxy
 pm disable com.google.android.gms/com.google.android.gms.personalsafety.service.PersonalSafetyService
-ui_print ✦ Disabled emergency features and child safety services.
 pm disable com.google.android.gms/com.google.android.gms.fitness.cache.DataUpdateListenerCacheService
 pm disable com.google.android.gms/com.google.android.gms.fitness.service.ble.FitBleBroker
 pm disable com.google.android.gms/com.google.android.gms.fitness.service.config.FitConfigBroker
@@ -357,7 +356,6 @@ pm disable com.google.android.gms/com.google.android.gms.fitness.service.session
 pm disable com.google.android.gms/com.google.android.gms.fitness.sensors.sample.CollectSensorService
 pm disable com.google.android.gms/com.google.android.gms.fitness.sync.FitnessSyncAdapterService 
 pm disable com.google.android.gms/com.google.android.gms.fitness.sync.SyncGcmTaskService
-ui_print ✦ Disabled Google Fit health tracking services.
 pm disable com.google.android.gms/com.google.android.gms.nearby.bootstrap.service.NearbyBootstrapService
 pm disable com.google.android.gms/com.google.android.gms.nearby.connection.service.NearbyConnectionsAndroidService
 pm disable com.google.android.gms/com.google.location.nearby.direct.service.NearbyDirectService
