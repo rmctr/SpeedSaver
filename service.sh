@@ -12,8 +12,9 @@ lock_val() {
 	fi
 }
 
-while [ "$(getprop sys.boot_completed)" != 1 ];
-do sleep 3;
+until [ "$(getprop sys.boot_completed)" = "1" ] && \
+[ -d "/sdcard/Android" ]; do
+sleep 3
 done
 
 MODDIR=${0%/*}
@@ -22,22 +23,22 @@ BASEDIR="$(dirname $(readlink -f "$0"))"
 # SpeedSaver folder location
 CON_PATH="/sdcard/Android/SpeedSaver"
 
-# Vsync 
+# Vsync (validity uncertain but does no harm)
 set start vsync
 
-# Freeze cached apps
+# Suspend execution of cached apps
 settings put global cached_apps_freezer true
 
-# MIUI proximity sensor fix, too anecdotal
+# anecdotal Xiaomi proximity sensor fix
 #settings put global enable_screen_on_proximity_sensor 1
 
-# Enable Zygote preforking
+# Enable Zygote preforking (Unspecialized App Processes)
 am broadcast -a \"com.google.android.gms.phenotype.FLAG_OVERRIDE\" --es package \"com.google.android.platform.runtime_native\" --es user \"\*\" --esa flags \"usap_pool_enabled\" --esa values \"true\" --esa types \"string\" com.google.android.gms
 
-# Set fstrim every reboot
+# Set Android to run fstrim on every reboot
 settings put global fstrim_mandatory_interval 1
 
-# Disable logging
+# Disable various logging (depends on device which ones work)
 write "/sys/module/earlysuspend/parameters/debug_mask" 0
 write "/sys/module/alarm/parameters/debug_mask" 0
 write "/sys/module/alarm_dev/parameters/debug_mask" 0
@@ -107,8 +108,7 @@ lock_val "off" "/proc/sys/kernel/printk_devkmsg"
 write /proc/sys/kernel/printk_devkmsg "0"
 write /proc/sys/kernel/sched_schedstats "0"
 
-# Busybox implementation 
-BASEDIR="$(dirname $(readlink -f "$0"))"
+# Path
 BIN_PATH="$BASEDIR/bin"
 
 # Use private busybox
@@ -130,7 +130,7 @@ log() {
 }
 
 # Initialize log file
-echo "Optimization" > "$SQLITE_LOG"
+> "$SQLITE_LOG"
 log "$SQLITE_LOG" "Starting Automatic SQLite optimization"
 
 # SQLite optimization
@@ -166,10 +166,9 @@ else
     log "$SQLITE_LOG" "SQLite Failed: Only $SUCCESS_SQLITE out of $SQLITE_COUNT databases optimized"
 fi
 
-rm -rf "$CON_PATH/fstrim.txt"
-touch "$CON_PATH/fstrim.txt"
-# busybox fstrim partitions
-fstrim -v /data >> "CON_PATH/fstrim.txt"
+> "$CON_PATH/fstrim.txt"
+# fstrim partitions if kernel allows
+fstrim -v /data >> "$CON_PATH/fstrim.txt"
 fstrim -v /cache >> "$CON_PATH/fstrim.txt"
 fstrim -v /system >> "$CON_PATH/fstrim.txt"
 fstrim -v /systen_ext >> "$CON_PATH/fstrim.txt"
@@ -178,12 +177,16 @@ fstrim -v /persist >> "$CON_PATH/fstrim.txt"
 fstrim -v /boot >> "$CON_PATH/fstrim.txt"
 fstrim -v / >> "$CON_PATH/fstrim.txt"
 
-unset -f write
+# Run KTweak
 setsid nohup ktweak &
-# Lower priorities for processes
-setsid nohup low_pr_proc &
+
+# Nice level changer for processes
+setsid nohup proc_renicer &
+
 # Notification
 su -lp 2000 -c "cmd notification post -S bigtext -t 'SpeedSaver' 'Tag' 'Optimizations complete.'"
 sleep 10
-setsid nohup gms_dis &
+
+# Run GMS services disabler
+setsid nohup gms_cleaner &
 exit 0

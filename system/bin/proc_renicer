@@ -1,0 +1,36 @@
+#!/system/bin/sh
+# Copyright (c) 2025, Noah Y. & Xaiphon
+
+CON_PATH="/sdcard/Android/SpeedSaver/"
+
+# Lower priorities for processes
+RENICE_LOG="$CON_PATH/renice.txt"
+
+# Function to log messages with a time stamp
+log() {
+    local log_file="$1"
+    local message="$2"
+    echo "$(date +"%m-%d-%Y %H:%M:%S") - $message" >> "$log_file"
+}
+
+# Processes to renice (prioritize less)
+PROCESSES=("com.google.android.gms" "com.google.android.gms.persistent" "com.google.android.gms.unstable" "/system/bin/logd" "/system/bin/netd" "com.miui.securitycenter" "com.miui.securitycenter.remote" "com.miui.daemon")
+
+while true; do
+    > "$RENICE_LOG"
+    for PROCESS in "${PROCESSES[@]}"; do
+        PIDS=$(pgrep -f "$PROCESS")
+        if [ -n "$PIDS" ]; then
+            for PID in $PIDS; do
+                if renice -n 19 -p "$PID"; then
+                    log "$RENICE_LOG" "Successfully reniced $PROCESS with PID $PID"
+                else
+                    log "$RENICE_LOG" "Failed to renice $PROCESS with PID $PID"
+                fi
+            done
+        else
+            log "$RENICE_LOG" "$PROCESS is not running"
+        fi
+    done
+    sleep 600
+done
