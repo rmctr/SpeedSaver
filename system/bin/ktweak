@@ -25,27 +25,22 @@ write() {
 	# Write the new value and bail if there's an error
 	if ! echo "$2" > "$1" 2> /dev/null
 	then
-		echo "Failed: $1 → $2"
+		echo "Failed: $1 -> $2" >> "$KTWEAK_LOG"
 		return 1
 	fi
 
 	# Log the success
-	echo "$1 → $2"
+	echo "$1 -> $2" >> "$KTWEAK_LOG"
 }
 
-# Check for root permissions and bail if not granted
-if [[ "$(id -u)" -ne 0 ]]
-then
-	echo "No root permissions. Exiting."
-	exit 1
-fi
+ANDROID=true
 
-# Detect if we are running on Android
-grep -q android /proc/cmdline && ANDROID=true
+#set ktweak log
+KTWEAK_LOG="$CON_PATH/ktweak.log"
 
 # Log the date and time for records sake
-echo "Time of execution: $(date)"
-echo "Branch: $BRANCH"
+echo "Time of execution: $(date)" >> "$KTWEAK_LOG"
+echo "Branch: $BRANCH" >> "$KTWEAK_LOG"
 
 # Sync to data in the rare case a device crashes
 sync
